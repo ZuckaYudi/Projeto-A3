@@ -29,9 +29,9 @@ public class TelaAdministradores extends javax.swing.JFrame {
     private void initComponents() {
 
         AdmPanel = new java.awt.Panel();
-        GerenciamentoButton = new javax.swing.JButton();
-        SairMenuButton = new javax.swing.JButton();
-        EntrarFilaButton = new javax.swing.JButton();
+        gerenciamentoButton = new javax.swing.JButton();
+        sairMenuButton = new javax.swing.JButton();
+        entrarFilaButton = new javax.swing.JButton();
         InterfaceLabbel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,16 +39,16 @@ public class TelaAdministradores extends javax.swing.JFrame {
 
         AdmPanel.setName(""); // NOI18N
 
-        GerenciamentoButton.setText("Gerenciamento de Usuarios");
+        gerenciamentoButton.setText("Gerenciamento de Usuarios");
 
-        SairMenuButton.setText("Sair");
-        SairMenuButton.addActionListener(new java.awt.event.ActionListener() {
+        sairMenuButton.setText("Sair");
+        sairMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SairMenuButtonActionPerformed(evt);
+                sairMenuButtonActionPerformed(evt);
             }
         });
 
-        EntrarFilaButton.setText("Fila De Espera");
+        entrarFilaButton.setText("Fila De Espera");
 
         javax.swing.GroupLayout AdmPanelLayout = new javax.swing.GroupLayout(AdmPanel);
         AdmPanel.setLayout(AdmPanelLayout);
@@ -58,12 +58,12 @@ public class TelaAdministradores extends javax.swing.JFrame {
                 .addGroup(AdmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AdmPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(EntrarFilaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(entrarFilaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(GerenciamentoButton))
+                        .addComponent(gerenciamentoButton))
                     .addGroup(AdmPanelLayout.createSequentialGroup()
                         .addGap(119, 119, 119)
-                        .addComponent(SairMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(sairMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         AdmPanelLayout.setVerticalGroup(
@@ -71,10 +71,10 @@ public class TelaAdministradores extends javax.swing.JFrame {
             .addGroup(AdmPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(AdmPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EntrarFilaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GerenciamentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(entrarFilaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gerenciamentoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(60, 60, 60)
-                .addComponent(SairMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sairMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
 
@@ -108,10 +108,10 @@ public class TelaAdministradores extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SairMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairMenuButtonActionPerformed
+    private void sairMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairMenuButtonActionPerformed
         //Fecha a tela
         this.dispose(); 
-    }//GEN-LAST:event_SairMenuButtonActionPerformed
+    }//GEN-LAST:event_sairMenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,9 +151,9 @@ public class TelaAdministradores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Panel AdmPanel;
-    private javax.swing.JButton EntrarFilaButton;
-    private javax.swing.JButton GerenciamentoButton;
     private javax.swing.JLabel InterfaceLabbel;
-    private javax.swing.JButton SairMenuButton;
+    private javax.swing.JButton entrarFilaButton;
+    private javax.swing.JButton gerenciamentoButton;
+    private javax.swing.JButton sairMenuButton;
     // End of variables declaration//GEN-END:variables
 }

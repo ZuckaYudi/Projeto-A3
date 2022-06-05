@@ -29,6 +29,15 @@ public class Usuario {
         this.administrador = administrador;
     }
     
+    public Usuario (String nome, String senha, int idade, String endereco, int prioritario, int administrador) {
+        this.nome = nome;
+        this.senha = senha;
+        this.idade = idade;
+        this.endereco = endereco;
+        this.prioritario = prioritario;
+        this.administrador = administrador;
+    }
+    
     public String getNome() {
         return nome;
     }

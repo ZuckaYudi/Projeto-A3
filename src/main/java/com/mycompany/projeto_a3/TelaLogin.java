@@ -48,6 +48,11 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         registrarButton.setText("Registrar");
+        registrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarButtonActionPerformed(evt);
+            }
+        });
 
         sairButton.setText("Sair");
         sairButton.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +145,12 @@ public class TelaLogin extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void registrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarButtonActionPerformed
+        TelaRegistro dt = new TelaRegistro();
+        dt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_registrarButtonActionPerformed
 
     /**
      * @param args the command line arguments

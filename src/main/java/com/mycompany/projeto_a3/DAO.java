@@ -34,4 +34,17 @@ public class DAO {
     }
    }
  }
+ public void inserirUsuario (Usuario usuario) throws Exception {
+        String sql = "INSERT INTO tb_usuarios (nome, senha, idade, endereco, prioritario, administrador) VALUES (?, ?, ?, ?, ?, ?);";
+        try (Connection conexao = ConexaoBD.obterConexao();
+                PreparedStatement ps = conexao.prepareStatement (sql)) {
+            ps.setString (1, usuario.getNome());
+            ps.setString (2, usuario.getSenha());
+            ps.setInt (3, usuario.getIdade());
+            ps.setString (4, usuario.getEndereco());
+            ps.setInt (5, usuario.getPrioritario());
+            ps.setInt (6, usuario.getAdministrador());
+            ps.execute();
+        }
+    }
 }

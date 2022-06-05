@@ -64,13 +64,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="EntrarFilaButton" min="-2" pref="168" max="-2" attributes="0"/>
+                          <Component id="entrarFilaButton" min="-2" pref="168" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="GerenciamentoButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="gerenciamentoButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
-                          <Component id="SairMenuButton" min="-2" pref="168" max="-2" attributes="0"/>
+                          <Component id="sairMenuButton" min="-2" pref="168" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="32" max="32767" attributes="0"/>
@@ -82,31 +82,31 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="EntrarFilaButton" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="GerenciamentoButton" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="entrarFilaButton" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
+                      <Component id="gerenciamentoButton" alignment="3" min="-2" pref="61" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="SairMenuButton" min="-2" pref="61" max="-2" attributes="0"/>
+                  <Component id="sairMenuButton" min="-2" pref="61" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="GerenciamentoButton">
+        <Component class="javax.swing.JButton" name="gerenciamentoButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gerenciamento de Usuarios"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="SairMenuButton">
+        <Component class="javax.swing.JButton" name="sairMenuButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SairMenuButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sairMenuButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="EntrarFilaButton">
+        <Component class="javax.swing.JButton" name="entrarFilaButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fila De Espera"/>
           </Properties>
