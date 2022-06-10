@@ -14,7 +14,7 @@ public class TelaAdministradores extends javax.swing.JFrame {
      * Creates new form AdministradoresJFrame
      */
     public TelaAdministradores() {
-        super ("Interface Administradores");
+        super("Interface Administradores");
         setLocationRelativeTo(null);
         initComponents();
     }
@@ -40,6 +40,11 @@ public class TelaAdministradores extends javax.swing.JFrame {
         AdmPanel.setName(""); // NOI18N
 
         gerenciamentoButton.setText("Gerenciamento de Usuarios");
+        gerenciamentoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciamentoButtonActionPerformed(evt);
+            }
+        });
 
         sairMenuButton.setText("Sair");
         sairMenuButton.addActionListener(new java.awt.event.ActionListener() {
@@ -110,8 +115,14 @@ public class TelaAdministradores extends javax.swing.JFrame {
 
     private void sairMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairMenuButtonActionPerformed
         //Fecha a tela
-        this.dispose(); 
+        this.dispose();
     }//GEN-LAST:event_sairMenuButtonActionPerformed
+
+    private void gerenciamentoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciamentoButtonActionPerformed
+        TelaGerenciamentoUsuario ct = new TelaGerenciamentoUsuario();
+        ct.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_gerenciamentoButtonActionPerformed
 
     /**
      * @param args the command line arguments

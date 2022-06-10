@@ -9,27 +9,47 @@ package com.mycompany.projeto_a3;
  * @author Zucka
  */
 public class Usuario {
-    
-    private String  nome;
+
+    private int id;
+    private String nome;
     private String senha;
     private int idade;
     private String endereco;
     private int prioritario;
     private int administrador;
-    
-    
+
     //Construtores
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public Usuario (int id){
+        this.id = id;
+    }
+    
     public Usuario(String nome, String senha) {
         this.nome = nome;
         this.senha = senha;
     }
-    
+
     public Usuario(String nome, int administrador) {
         this.nome = nome;
         this.administrador = administrador;
     }
-    
-    public Usuario (String nome, String senha, int idade, String endereco, int prioritario, int administrador) {
+
+    public Usuario(String nome, int idade, String senha, String endereco) {
+        this.nome = nome;
+        this.idade = idade;
+        this.senha = senha;
+        this.endereco = endereco;
+    }
+
+    public Usuario(String nome, String senha, int idade, String endereco, int prioritario, int administrador) {
         this.nome = nome;
         this.senha = senha;
         this.idade = idade;
@@ -38,6 +58,16 @@ public class Usuario {
         this.administrador = administrador;
     }
     
+    public Usuario(int id, String nome, String senha, int idade, String endereco, int prioritario, int administrador) {
+        this.id = id;
+        this.nome = nome;
+        this.senha = senha;
+        this.idade = idade;
+        this.endereco = endereco;
+        this.prioritario = prioritario;
+        this.administrador = administrador;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -85,5 +115,10 @@ public class Usuario {
     public void setAdministrador(int administrador) {
         this.administrador = administrador;
     }
-    
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+
 }

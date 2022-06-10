@@ -50,6 +50,7 @@ public class TelaColaboradores extends javax.swing.JFrame {
             }
         });
 
+        EsperajList.setBorder(javax.swing.BorderFactory.createTitledBorder("Fila de espera"));
         EsperajList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
