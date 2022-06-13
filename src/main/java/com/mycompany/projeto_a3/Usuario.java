@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.projeto_a3;
 
-/**
- *
- * @author Zucka
- */
 public class Usuario {
 
     private int id;
@@ -32,6 +24,8 @@ public class Usuario {
         this.id = id;
     }
     
+    
+    
     public Usuario(String nome, String senha) {
         this.nome = nome;
         this.senha = senha;
@@ -40,6 +34,16 @@ public class Usuario {
     public Usuario(String nome, int administrador) {
         this.nome = nome;
         this.administrador = administrador;
+    }
+    
+    public Usuario(int id, int prioritario) {
+        this.id = id;
+        this.prioritario = prioritario;
+    }
+    
+    public Usuario(int prioritario, String nome) {
+        this.prioritario = prioritario;
+        this.nome = nome;
     }
 
     public Usuario(String nome, int idade, String senha, String endereco) {
@@ -67,6 +71,7 @@ public class Usuario {
         this.prioritario = prioritario;
         this.administrador = administrador;
     }
+    
 
     public String getNome() {
         return nome;

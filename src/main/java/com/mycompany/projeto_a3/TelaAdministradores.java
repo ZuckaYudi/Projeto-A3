@@ -54,6 +54,11 @@ public class TelaAdministradores extends javax.swing.JFrame {
         });
 
         entrarFilaButton.setText("Fila De Espera");
+        entrarFilaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrarFilaButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout AdmPanelLayout = new javax.swing.GroupLayout(AdmPanel);
         AdmPanel.setLayout(AdmPanelLayout);
@@ -123,6 +128,12 @@ public class TelaAdministradores extends javax.swing.JFrame {
         ct.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_gerenciamentoButtonActionPerformed
+
+    private void entrarFilaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarFilaButtonActionPerformed
+        TelaGerenciamentoFila dt = new TelaGerenciamentoFila();
+        dt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_entrarFilaButtonActionPerformed
 
     /**
      * @param args the command line arguments

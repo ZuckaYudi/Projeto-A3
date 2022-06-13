@@ -132,6 +132,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     }else{
                     //Abre tela Colaborador
                         TelaColaboradores dt = new TelaColaboradores();
+                        dt.importarDados(usuario);
                         dt.setVisible(true);
                         this.dispose();
                     }

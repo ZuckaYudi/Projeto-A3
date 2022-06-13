@@ -11,7 +11,8 @@ public class DAO {
     public boolean existe(Usuario usuario) throws Exception {
         String sql = "SELECT * FROM tb_usuarios WHERE nome = ? AND senha = ?";
 
-        try ( Connection conn = ConexaoBD.obterConexao();  PreparedStatement ps = conn.prepareStatement(sql)) {
+        try ( Connection conn = ConexaoBD.obterConexao();  
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, usuario.getNome());
             ps.setString(2, usuario.getSenha());
 
@@ -24,7 +25,8 @@ public class DAO {
     public boolean validaAdm(Usuario usuario) throws Exception {
         String sql = "SELECT * FROM tb_usuarios WHERE nome = ? AND administrador = ?";
 
-        try ( Connection conn = ConexaoBD.obterConexao();  PreparedStatement ps = conn.prepareStatement(sql)) {
+        try ( Connection conn = ConexaoBD.obterConexao();  
+                PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, usuario.getNome());
             ps.setInt(2, usuario.getAdministrador());
 
@@ -36,13 +38,14 @@ public class DAO {
 
     public Usuario[] obterUsuario() throws Exception {
         String sql = "SELECT * FROM tb_usuarios";
-        try ( Connection conn = ConexaoBD.obterConexao();  PreparedStatement ps
-                = conn.prepareStatement(sql,
+        try ( Connection conn = ConexaoBD.obterConexao();  
+                PreparedStatement ps = conn.prepareStatement(sql,
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
                         ResultSet.CONCUR_READ_ONLY);  ResultSet rs = ps.executeQuery()) {
 
             int totalDeUsuarios = rs.last() ? rs.getRow() : 0;
             Usuario[] usuarios = new Usuario[totalDeUsuarios];
+            
             rs.beforeFirst();
             int contador = 0;
             while (rs.next()) {
@@ -94,7 +97,69 @@ public class DAO {
             
             ps.execute();
         }
-            
     }
+    
+    public int validarPrioritario (String nome, String senha) throws Exception{
+
+        String sql = "SELECT prioritario FROM tb_usuarios WHERE nome = ? and senha = ?";
+        try ( Connection conn = ConexaoBD.obterConexao();  
+                PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, nome);
+            ps.setString(2, senha);
+            ResultSet result = ps.executeQuery();
+
+            result.next();
+            int valor = result.getInt("prioritario");
+
+            return valor;
+        }
+    }
+    
+    public void inserirSolicitacao(Usuario usuario) throws Exception {
+        String sql = "INSERT INTO solicitacoes (nome, prioritario) VALUES (?, ?);";
+        try ( Connection conexao = ConexaoBD.obterConexao();  
+                PreparedStatement ps = conexao.prepareStatement(sql)) {
+            ps.setString(1, usuario.getNome());
+            ps.setInt(2, usuario.getPrioritario());
+            ps.execute();
+        }
+    }
+    
+    public Fila [] obterFila () throws Exception{
+        String sql = "SELECT * FROM solicitacoes";
+        try (Connection conn = ConexaoBD.obterConexao();
+                PreparedStatement ps = conn.prepareStatement(sql,
+                        ResultSet.TYPE_SCROLL_INSENSITIVE,
+                        ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = ps.executeQuery()){
+
+        int totalDeSolicitacoes = rs.last () ? rs.getRow() : 0;
+        Fila [] fila = new Fila[totalDeSolicitacoes];
+        rs.beforeFirst();
+        
+        int contador = 0;
+        
+        while (rs.next()){
+            int id = rs.getInt("id");
+            String nome = rs.getString("nome");
+            int prioritario = rs.getInt("prioritario");
+            fila[contador++] = new Fila (id, nome, prioritario);
+        }
+        return fila;
+            }
+    }
+    
+    public void removerFila (Fila fila) throws Exception{
+        String sql = "DELETE FROM solicitacoes WHERE id = ?";
+        try (Connection conexao = ConexaoBD.obterConexao();
+                PreparedStatement ps = conexao.prepareStatement(sql);){
+            ps.setInt (1, fila.getId());
+            ps.execute();
+        }
+    }
+
+    
+    
+
 
 }

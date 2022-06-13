@@ -101,7 +101,7 @@ public class TelaGerenciamentoUsuario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(usuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usuariosComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -185,7 +185,8 @@ public class TelaGerenciamentoUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void usuariosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosComboBoxActionPerformed
-        Usuario usuario = (Usuario) usuariosComboBox.getSelectedItem();
+        Usuario usuario = (Usuario) 
+        usuariosComboBox.getSelectedItem();
         nomeTextField.setText(usuario.getNome());
         idadeTextField.setText(Integer.toString(usuario.getIdade()));
         senhaTextField.setText(usuario.getSenha());
@@ -212,7 +213,7 @@ public class TelaGerenciamentoUsuario extends javax.swing.JFrame {
         
         //Lógica checkbox dos colaboradores
         if(administradorUsuarioCheckBox.isSelected()){
-        administradorUsuario = 1;
+        administradorUsuario =   1;
         cadast = "Confirmar cadastro de um novo administrador?";
         confirm = "Administrador criado com sucesso!";
         }else{
@@ -221,7 +222,7 @@ public class TelaGerenciamentoUsuario extends javax.swing.JFrame {
             confirm = "Colaborador criado com sucesso!";
         }
 
-        if (nomeUsuario == null || nomeUsuario.length() == 0 || senhaUsuario == null || senhaUsuario.length() == 0) {
+        if (!this.VerificarCampo()) {
             JOptionPane.showMessageDialog(null, "Preencha nome, idade, senha e endereço");
         } else {
             try {
